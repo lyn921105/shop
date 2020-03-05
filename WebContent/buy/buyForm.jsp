@@ -21,7 +21,7 @@
 			<td width="100">금액</td>
 		</tr>
 	<c:set var="total" value="0" />
-		<c:forEach var="cart" items="${cartLIsts }">
+		<c:forEach var="cart" items="${cartLists }">
 			<tr>
 				<td width="300">
 					<img src="/shoppingmall/bookImage/${cart.getBook_image() }"
