@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$("#bookMain").click(function() {
-		window.location.href("/shoppingmall/mg/managerMain.do");
+		window.location.href="/shoppingmall/mg/managerMain.do";
 	});
 });
 function reply(replyBtn) {

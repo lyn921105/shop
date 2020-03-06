@@ -49,7 +49,7 @@ $(document).ready(function() {
 			url : "/shoppingmall/registerPro.do",
 			data : query,
 			success : function(data) {
-				window.location.href("/shoppingmall/index.do");
+				window.location.href="/shoppingmall/index.do";
 			}
 		});
 
@@ -57,6 +57,6 @@ $(document).ready(function() {
 	
 	// [취소] 버튼 클릭
 	$("#cancle").click(function(){
-		window.location.href("/shoppingmall/index.do");
+		window.location.href="/shoppingmall/index.do";
 	});
 });

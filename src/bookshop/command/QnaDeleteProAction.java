@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import bookshop.bean.QnaDBBean;
 
-public class QanDeleteProAction implements CommandAction {
+public class QnaDeleteProAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {

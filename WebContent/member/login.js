@@ -5,7 +5,7 @@
 $(documnet).ready(function(){
 	// [회원가입] 버튼 클릭
 	$("#uRes").click(function(){
-		window.location.href("/shoppingmall/registerForm.do");
+		window.location.href="/shoppingmall/registerForm.do";
 	});
 	
 	// [로그인] 버튼 클릭
@@ -22,7 +22,7 @@ $(documnet).ready(function(){
 				var len = str1.length;
 				var check = data.substr(loc + len, 1);
 				if (check == "1") {
-					window.location.href("/shoppingmall/index.do");
+					window.location.href="/shoppingmall/index.do";
 				} else if (check == "0"){
 					alert("비밀번호 틀림");
 					$("#cpasswd").val();

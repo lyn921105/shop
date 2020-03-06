@@ -5,12 +5,12 @@
 $(document).ready(function(){
 	// [책등록] 버튼 클릭
 	$("#regist").click(function(){
-		window.location.href("/shoppingmall/mg/bookregisterForm.do");
+		window.location.href="/shoppingmall/mg/bookregisterForm.do";
 	});
 	
 	// [관리자 메인으로] 버튼 클릭
 	$("#bookMain").click(function(){
-		window.location.href("/shoppingmall/mg/managerMain.do");
+		window.location.href="/shoppingmall/mg/managerMain.do";
 	});
 	
 	// [수정] 버튼 클릭

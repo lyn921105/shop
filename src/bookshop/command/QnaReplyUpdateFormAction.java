@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import bookshop.bean.QnaDBBean;
 import bookshop.bean.QnaDataBean;
 
-public class QnaReplyUpdateformAction implements CommandAction{
+public class QnaReplyUpdateFormAction implements CommandAction{
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {

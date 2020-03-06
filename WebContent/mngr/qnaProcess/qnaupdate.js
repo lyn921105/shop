@@ -10,11 +10,11 @@ $(document).ready(function() {
 					url : "/shoppingmall/mg/qnaReplyUpdatePro.do",
 					data : query,
 					success : function(data) {
-						window.location.href("/shoppingmall/mg/qnaList.do");
+						window.location.href="/shoppingmall/mg/qnaList.do";
 					}
 				});
 			});
 			$("#cancle").click(function() {
-				window.location.href("/shoppingmall/mg/qnaList.do");
+				window.location.href="/shoppingmall/mg/qnaList.do";
 			});
 		});

@@ -22,11 +22,11 @@ $(function() {
 	});
 
 	$("#list").click(function() { // 목록으로 버튼 클릭
-		window.location.href("/shoppingmall/list.do?book_kind=all");
+		window.location.href="/shoppingmall/list.do?book_kind=all";
 	});
 
 	$("#shopMain").click(function() {// 메인으로 버튼 클릭
-		window.location.href("/shoppingmall/index.do");
+		window.location.href="/shoppingmall/index.do";
 	});
 
 	$("writeQna").click(function() {
