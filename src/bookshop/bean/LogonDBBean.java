@@ -9,9 +9,6 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import work.crypt.BCrypt;
-import work.crypt.SHA256;
-
 public class LogonDBBean {
 	// LogonDBBean 전역 객체 생성←한 개의 객체만 생성해서 공유
 	private static LogonDBBean instance = new LogonDBBean();
@@ -37,18 +34,14 @@ public class LogonDBBean {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
-		SHA256 sha = SHA256.getInsatnce();
 
 		try {
 			conn = getConnection();
 
-			String orgPass = member.getPasswd();
-			String shaPass = sha.getSha256(orgPass.getBytes());
-			String bcPass = BCrypt.hashpw(shaPass, BCrypt.gensalt());
 
 			pstmt = conn.prepareStatement("insert into member values(?,?,?,?,?,?)");
 			pstmt.setString(1, member.getId());
-			pstmt.setString(2, bcPass);
+			pstmt.setString(2, member.getPasswd());
 			pstmt.setString(3, member.getName());
 			pstmt.setTimestamp(4, member.getReg_date());
 			pstmt.setString(5, member.getAddress());
@@ -78,12 +71,9 @@ public class LogonDBBean {
 
 		int x = -1;
 
-		SHA256 sha = SHA256.getInsatnce();
 		try {
 			conn = getConnection();
 
-			String orgPass = passwd;
-			String shaPass = sha.getSha256(orgPass.getBytes());
 
 			pstmt = conn.prepareStatement("select passwd from member where id=?");
 			pstmt.setString(1, id);
@@ -91,7 +81,7 @@ public class LogonDBBean {
 
 			if (rs.next()) { // 해당 아이디가 있으면 수행
 				String dbpasswd = rs.getString("passwd");
-				if (BCrypt.checkpw(shaPass, dbpasswd)) {
+				if (dbpasswd.equals(passwd)) {
 					x = 1; // 인증 성공
 				} else {
 					x = 0; // 비밀번호 틀림
@@ -216,13 +206,10 @@ public class LogonDBBean {
 		ResultSet rs = null;
 		LogonDataBean member = null;
 
-		SHA256 sha = SHA256.getInsatnce();
 
 		try {
 			conn = getConnection();
 
-			String orgPass = passwd;
-			String shaPass = sha.getSha256(orgPass.getBytes());
 
 			pstmt = conn.prepareStatement("select * from member where id=?");
 			pstmt.setString(1, id);
@@ -230,7 +217,7 @@ public class LogonDBBean {
 
 			if (rs.next()) {// 해당 아이디에 대한 레코드가 존재
 				String dbPasswd = rs.getString("passwd");
-				if (BCrypt.checkpw(shaPass, dbPasswd)) { // 사용자가 입력한 비밀번호와 같으면 수행
+				if (dbPasswd.equals(passwd)) { // 사용자가 입력한 비밀번호와 같으면 수행
 					member = new LogonDataBean(); // 데이터 저장빈 객체 생성
 					member.setId(rs.getString("id"));
 					member.setName(rs.getString("name"));
@@ -270,13 +257,9 @@ public class LogonDBBean {
 		ResultSet rs = null;
 		int x = -1;
 
-		SHA256 sha = SHA256.getInsatnce();
 
 		try {
 			conn = getConnection();
-
-			String orgPass = member.getPasswd();
-			String shaPass = sha.getSha256(orgPass.getBytes());
 
 			pstmt = conn.prepareStatement("select passwd from member where id=?");
 			pstmt.setString(1, member.getId());
@@ -284,7 +267,7 @@ public class LogonDBBean {
 
 			if (rs.next()) {// 해당 아이디가 있으면 수행
 				String dbpasswd = rs.getString("passwd");
-				if (BCrypt.checkpw(shaPass, dbpasswd)) {
+				if (dbpasswd != null) {
 					pstmt = conn.prepareStatement("update member set name=?, address=?, tel=? where id=?");
 					pstmt.setString(1, member.getName());
 					pstmt.setString(2, member.getAddress());
@@ -329,13 +312,8 @@ public class LogonDBBean {
 		ResultSet rs = null;
 		int x = -1;
 
-		SHA256 sha = SHA256.getInsatnce();
-
 		try {
 			conn = getConnection();
-
-			String orgPass = passwd;
-			String shaPass = sha.getSha256(orgPass.getBytes());
 
 			pstmt = conn.prepareStatement("select passwd from member where id=?");
 			pstmt.setString(1, id);
@@ -343,7 +321,7 @@ public class LogonDBBean {
 
 			if (rs.next()) {
 				String dbpasswd = rs.getString("passwd");
-				if (BCrypt.checkpw(shaPass, dbpasswd)) {
+				if (dbpasswd.equals(passwd)) {
 					pstmt = conn.prepareStatement("delete from member where id=?");
 					pstmt.setString(1, id);
 					pstmt.executeUpdate();

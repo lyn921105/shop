@@ -10,8 +10,6 @@ import java.util.List;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import work.crypt.BCrypt;
-import work.crypt.SHA256;
 
 public class MngrDBBean {
 	// MngrDBBean 전역 객체 생성
@@ -40,12 +38,9 @@ public class MngrDBBean {
 		ResultSet rs = null;
 		int x = -1;
 
-		SHA256 sha = SHA256.getInsatnce();
 		try {
 			con = getConnection();
 
-			String orgPass = passwd;
-			String shaPass = sha.getSha256(orgPass.getBytes());
 
 			pstmt = con.prepareStatement("select managerPasswd from manager where managerId = ?");
 			pstmt.setString(1, id);
@@ -53,7 +48,7 @@ public class MngrDBBean {
 
 			if (rs.next()) {
 				String dbpasswd = rs.getString("managerPasswd");
-				if (BCrypt.checkpw(shaPass, dbpasswd)) {
+				if (dbpasswd.equals(passwd)) {
 					x = 1;
 				} else {
 					x = 0;

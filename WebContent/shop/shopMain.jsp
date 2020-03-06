@@ -35,7 +35,7 @@
 			<table class="vhcenter">
 				<tr height="30">
 					<td rowspan="4" width="100"><a
-						href="/shoppingmall.bookImage/${book.getBook_image()}"
+						href="/shoppingmall/bookImage/${book.getBook_image()}"
 						class="listimage"></a></td>
 					<td width="350" class="vhcenter"><a
 						href="/shoppingmall/bookContent.do?book_id=${book.getBook_id() }&book_kind=${book.getBook_kind()}"
