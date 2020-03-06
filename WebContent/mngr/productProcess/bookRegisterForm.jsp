@@ -9,7 +9,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-<script src="/bookregist.js"></script>
+<script type="text/javascript" src="/shoppingmall/js/jquery.form.min.js"></script>
+<script type="text/javascript" src="/shoppingmall/mngr/productProcess/bookregist.js"></script>
 </head>
 <body>
 	<c:if test="${empty sessionScope.id}">
@@ -25,7 +26,7 @@
 			<ul>
 				<li><label for ="book_kind">분류선택</label>
 					<select id="book_kind" name="book_kind">
-						<option value="100">목화</option>
+						<option value="100">문학</option>
 						<option value="200">외국어</option>
 						<option value="300">컴퓨터</option>
 					</select>
