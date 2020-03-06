@@ -6,7 +6,7 @@ $(document).ready(function(){
 	// [책등록] 버튼 클릭
 	$("#upForm1").ajaxForm({
 		success: function(data, status) {
-			window.location.href="/shoppingmall/mg/bookList.do?book_kind=all"=;
+			window.location.href="/shoppingmall/mg/bookList.do?book_kind=all";
 		}
 	});
 	

@@ -7,7 +7,7 @@
 <script type="text/javascript"
 <link rel="stylesheet" href="/shoppingmall/css/style.css"/>
 	src="http://code.jquery.com/jquery.min.js"></script>
-<script src="/shoppingmall/mngr/managermain.js"></script>
+<script src="/shoppingmall/mngr/managerMain.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>

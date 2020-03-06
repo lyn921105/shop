@@ -8,6 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:remove var="id" socpe="session"/>
+	<c:remove var="id" scope="session"/>
 </body>
 </html>

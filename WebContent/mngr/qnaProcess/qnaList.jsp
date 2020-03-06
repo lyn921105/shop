@@ -2,15 +2,14 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<script type="text/javascript"
-	<link rel="stylesheet" href="/shoppingmall/css/style.css"/>
-	src="http://code.jquery.com/jquery.min.js"></script>
-<script src="/shoppingmall/mngr/qnaProcess/qnalist.js"></script>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/shoppingmall/css/style.css"/>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script src="/shoppingmall/mngr/qnaProcess/qnalist.js"></script>
 </head>
 <body>
 	<c:if test="${empty sessionScope.id }">
