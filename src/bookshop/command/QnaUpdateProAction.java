@@ -23,7 +23,7 @@ public class QnaUpdateProAction implements CommandAction {
 		qna.setQna_content(qna_content);
 
 		// qna 수정
-		QanDBBean qnaProcess = QnaDBBean.getInstance();
+		QnaDBBean qnaProcess = QnaDBBean.getInstance();
 		int check = qnaProcess.updateArticle(qna);
 
 		request.setAttribute("check", new Integer(check));

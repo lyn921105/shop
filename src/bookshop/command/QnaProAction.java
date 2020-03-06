@@ -28,7 +28,7 @@ public class QnaProAction implements CommandAction {
 		QnaDataBean qna = new QnaDataBean();
 		qna.setBook_id(book_id);
 		qna.setBook_title(book_title);
-		qna.setBook_Qna_content(qna_content);
+		qna.setQna_content(qna_content);
 		qna.setReply(reply);
 		qna.setReg_date(new Timestamp(System.currentTimeMillis()));
 		qna.setQora(qora);

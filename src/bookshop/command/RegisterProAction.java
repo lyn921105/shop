@@ -1,9 +1,9 @@
 package bookshop.command;
 
+import java.sql.Timestamp;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.sun.jmx.snmp.Timestamp;
 
 import bookshop.bean.LogonDataBean;
 import bookshop.bean.LogonDBBean;

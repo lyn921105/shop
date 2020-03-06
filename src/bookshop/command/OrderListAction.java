@@ -5,6 +5,9 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import bookshop.bean.BuyDBBean;
+import bookshop.bean.BuyDataBean;
+
 public class OrderListAction implements CommandAction{
 
 	@Override
@@ -12,8 +15,8 @@ public class OrderListAction implements CommandAction{
 		// TODO Auto-generated method stub
 		List<BuyDataBean> buyLists =null;
 		int count= 0;
-		BuyDBBean buyProcess = buyDBBean.getInstance();
-		count = buyProcess.getInstance();
+		BuyDBBean buyProcess = BuyDBBean.getInstance();
+		count = buyProcess.getListCount();
 		
 		if (count < 0) {
 			buyLists = buyProcess.getBuyList();

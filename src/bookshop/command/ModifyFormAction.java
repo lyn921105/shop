@@ -3,6 +3,9 @@ package bookshop.command;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import bookshop.bean.LogonDBBean;
+import bookshop.bean.LogonDataBean;
+
 public class ModifyFormAction implements CommandAction {
 
 	@Override
