@@ -85,7 +85,7 @@
 			<p>상품 QnA를 쓰시려면 로그인하세요.</p>
 		</c:if>
 	</p>
-	<c:if test=""${count==0 }">
+	<c:if test="${count==0 }">
 		<ul>
 			<li>등록된 상품 QnA가 없습니다.
 		</ul>

@@ -35,7 +35,7 @@
 					<c:if test="${qna.getReply()==0 }">
 						<p>
 							<button id="reply" name="${qna.getQna_id() }"
-								oneclick="reply(this)">답변하기</button>
+								onclick="reply(this)">답변하기</button>
 						</p>
 					</c:if>
 					<c:if test="${qna.getQora()==2 }">
